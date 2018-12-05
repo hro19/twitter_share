@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="ja">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 <head>
 	<meta charset="UTF-8">
@@ -8,7 +7,6 @@
 	<link rel="canonical" href="https://realdgame.jp/hunter2019">
 	<script src="https://unpkg.com/vue/dist/vue.js"></script>
 </head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 <body>
 	<div id="webquiz">
@@ -32,22 +30,17 @@
 			methods: {
 				naming() {
 					var urlParam = location.search.substring(1);
-
 					// 「&」が含まれている場合は「&」で分割
 					var param = urlParam.split('&');
-
 					// パラメータを格納する用の配列を用意
 					var paramArray = [];
-
 					// 用意した配列にパラメータを格納
 					for (i = 0; i < param.length; i++) {
 						var paramItem = param[i].split('=');
 						paramArray[paramItem[0]] = paramItem[1];
 					}
-
 					// パラメータyour_nameをdataに格納する
-
-					this.your_name = unescape(paramArray.your_name)
+					this.your_name = decodeURI(paramArray.your_name)
 				}
 			},
 			created: function () {
