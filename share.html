@@ -4,7 +4,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>ツイッターシェアボタン</title>
-	<link rel="canonical" href="//realdgame.jp/hunter2019">
+	<link rel="canonical" href="https://realdgame.jp/hunter2019">
 	<script src="https://unpkg.com/vue/dist/vue.js"></script>
 </head>
 
@@ -39,7 +39,7 @@
 						var paramItem = param[i].split('=');
 						paramArray[paramItem[0]] = paramItem[1];
 					}
-					// パラメータyour_nameをdataに格納する
+					// パラメータyour_nameをdecode
 					this.your_name = decodeURI(paramArray.your_name)
 				}
 			},
