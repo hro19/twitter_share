@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+	<meta charset="UTF-8">
+	<title>ツイッターシェアボタン</title>
+	<link rel="canonical" href="https://realdgame.jp/hunter2019">
+	<script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+
+<body>
+	<div id="webquiz">
+		<input v-model="your_name" placeholder="名前を入力して下さい">
+		<h2>入力した名前:<span v-text="your_name">{{your_name}}</span></h2>
+		<div v-if="your_name"><a :href="'share.html?your_name='+yn_escape">名前入力が完了したらここを押してください</a></div>
+		<hr>
+	</div>
+	<script>
+		// vue設定()
+		new Vue({
+			el: '#webquiz',
+			data: function data() {
+				return {
+					your_name: "",
+				};
+			},
+			methods: {
+			},
+			computed: {
+				yn_escape: function () {
+					return escape(this.your_name);
+				}
+			}
+		})
+	</script>
+</body>
+
+</html>
