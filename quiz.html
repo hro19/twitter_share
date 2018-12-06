@@ -13,7 +13,7 @@
 	<div id="quiz">
 		quizエリア
 		<section>
-			<h3>【残り時間】00：<span v-text="timeCount | zeropadding"></span></h3>
+			<h3>【残り時間】00：<span>{{ timeCount | zeropadding }}</span></h3>
 		</section>
 
 		<transition name="fade" mode="out-in">
