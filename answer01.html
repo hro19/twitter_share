@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+	<meta charset="UTF-8">
+	<title>ツイッターシェアボタン</title>
+	<link rel="canonical" href="https://realdgame.jp/hunter2019">
+	<script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+
+<body>
+	<div id="your_name">
+		<h2>あなたのお名前:<span v-text="your_name"></span></h2>
+		正解です
+		<hr>
+		<a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" :data-text="'リアル脱出ゲーム　ハンターハンター  投稿者【'+your_name+'】'"
+		 data-show-count="false" data-size="large">Tweet</a>
+	</div>
+	<script src="./js/your_name.js"></script>
+	<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</body>
+
+</html>

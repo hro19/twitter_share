@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+	<meta charset="UTF-8">
+	<title>ツイッターシェアボタン</title>
+	<link rel="canonical" href="https://realdgame.jp/hunter2019">
+	<script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+
+<body>
+	<div id="your_name"></div>
+	<div id="quiz">
+		quizエリア
+		<section>
+			<h3>【残り時間】00：<span>{{ timeCount | zeropadding }}</span></h3>
+		</section>
+
+		<transition name="fade" mode="out-in">
+			<div id="silent_area" v-if="silent">
+				<h2>サイレントタイム</h2>
+				さいれーんとさいれーーんと。
+				<hr>
+			</div>
+			<div id="question_area" v-else>
+				<h2>問題です。どっちかを選択してください</h2>
+				<li><a href="javascript:window.location.href='answer01.html?your_name='+yourNameClass.your_name;">アンサーその１</a></li>
+				<li><a href="javascript:window.location.href='answer02.html?your_name='+yourNameClass.your_name;">アンサーその２</a></li>
+				<hr>
+			</div>
+		</transition>
+	</div>
+	<script src="./js/quiz.js"></script>
+	<script src="./js/your_name.js"></script>
+
+</body>
+
+</html>

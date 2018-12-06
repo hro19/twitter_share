@@ -9,27 +9,13 @@
 </head>
 
 <body>
-	<div id="webquiz">
+	<div id="your_name">
 		<input v-model="your_name" placeholder="名前を入力して下さい">
-		<h2>入力した名前:<span v-text="your_name">{{your_name}}</span></h2>
-		<div v-if="your_name"><a :href="'share.html?your_name='+your_name">名前入力が完了したらここを押してください</a></div>
+		<h2>入力した名前:<span v-text="your_name"></span></h2>
+		<div v-if="your_name"><a :href="'quiz.html?your_name='+your_name">名前入力が完了したらここを押してください</a></div>
 		<hr>
 	</div>
-	<script>
-		// vue設定()
-		new Vue({
-			el: '#webquiz',
-			data: function data() {
-				return {
-					your_name: "",
-				};
-			},
-			methods: {
-			},
-			computed: {
-			}
-		})
-	</script>
+	<script src="./js/your_name.js"></script>
 </body>
 
 </html>
