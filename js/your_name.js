@@ -1,9 +1,11 @@
+'use strict';
+
 // vueインスタンス設定（your_name:入力した名前を管理する）
 var yourNameClass = new Vue({
     el: '#your_name',
     data: function data() {
         return {
-            your_name: "",
+            your_name: ""
         };
     },
 
@@ -23,12 +25,12 @@ var yourNameClass = new Vue({
                     paramArray[paramItem[0]] = paramItem[1];
                 }
                 // パラメータyour_nameをdecode
-                this.your_name = decodeURI(paramArray.your_name)
+                this.your_name = decodeURI(paramArray.your_name);
             }
         }
     },
 
     mounted: function mounted() {
-        this.naming()
+        this.naming();
     }
-})
+});
