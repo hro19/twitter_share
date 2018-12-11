@@ -12,7 +12,7 @@ var quizClass = new Vue({
         countDown: function countDown() {
             _this01 = this
             setInterval(function () {
-                _this01.timeCount--
+                (_this01.timeCount > 0) ? _this01.timeCount-- : false
                 _this01.CountCheck(_this01)
             }, 1000)
         },
