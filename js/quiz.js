@@ -25,7 +25,8 @@ var quizClass = new Vue({
             } else {
                 that.silent = false
             }
-        }
+        },
+
     },
 
     mounted: function mounted() {
@@ -35,6 +36,18 @@ var quizClass = new Vue({
     filters: {
         zeropadding: function (timeCount) {
             return ('00' + timeCount).slice(-2)
+        }
+    },
+
+    watch: {
+        timeCount: function () {
+            var colon_frash = document.getElementById('colon_frash');
+            var colon_frash_list = colon_frash.classList;
+            colon_frash_list.add('hide');
+
+            _.delay(function () {
+                colon_frash_list.remove('hide');
+            }, 500)
         }
     }
 

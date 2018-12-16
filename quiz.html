@@ -10,12 +10,37 @@
 	<script src="https://unpkg.com/vue/dist/vue.js"></script>
 </head>
 
+<style>
+	i#colon_frash {
+		font-style: normal;
+	}
+
+	i#colon_frash.hide {
+		opacity: 0;
+	}
+
+	.dezital_timer {
+		position: relative;
+		font-size: 2.0rem;
+	}
+
+	.dezital_timer .low_layer {
+		position: absolute;
+		z-index: -5;
+		top: -37px;
+		color: #ddd;
+	}
+</style>
+
 <body>
 	<div id="your_name"></div>
 	<div id="quiz">
 		quizエリア
 		<section>
-			<h3 class="tit02 D7MB">【残り時間】00：<span>{{ timeCount | zeropadding }}</span></h3>
+			<div class="dezital_timer">
+				<h3 class=" D7MB">【残り時間】00<i id="colon_frash">&nbsp;:&nbsp;</i><span>{{ timeCount | zeropadding }}</span></h3>
+				<h3 class=" D7MB low_layer">【残り時間】00<i id="colon_frash">&nbsp;:&nbsp;</i><span>00</span></h3>
+			</div>
 		</section>
 
 		<transition name="fade" mode="out-in">
@@ -32,6 +57,7 @@
 			</div>
 		</transition>
 	</div>
+	<script src="./js/lodash.min.js"></script>
 	<script src="./js/quiz.js"></script>
 	<script src="./js/your_name.js"></script>
 
